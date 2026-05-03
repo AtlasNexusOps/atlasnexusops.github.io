@@ -1,305 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Nexus — AI-Powered Data Operations</title>
-    <style>
-        :root {
-            --bg: #ffffff;
-            --card: #f8f9fa;
-            --border: #e2e4e9;
-            --purple: #6d4aff;
-            --purple-light: #f4f0ff;
-            --green: #1ea885;
-            --green-light: #e9f6f3;
-            --text: #1a1a2e;
-            --text-dim: #6b7280;
-            --text-bright: #0c0c14;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
-        }
-        .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-bright); }
-        .logo span { color: var(--purple); }
-        nav { display: flex; gap: 1.5rem; }
-        nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        nav a:hover { color: var(--purple); }
-
-        .hero { margin-bottom: 3rem; }
-        .status-bar {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green-light);
-            color: var(--green);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-        }
-        .hero h1 span { color: var(--purple); }
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-dim);
-            max-width: 550px;
-            margin-bottom: 2rem;
-        }
-        .cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .btn {
-            padding: 0.65rem 1.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.15s;
-        }
-        .btn-primary { background: var(--purple); color: white; }
-        .btn-primary:hover { background: #5a35f5; }
-        .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: white; }
-        .btn-outline:hover { border-color: var(--purple); color: var(--purple); }
-
-        section { margin-bottom: 3rem; }
-        section h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-bright);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.5rem;
-            transition: border-color 0.15s, box-shadow 0.15s;
-        }
-        .card:hover { border-color: var(--purple); box-shadow: 0 2px 12px rgba(109,74,255,0.08); }
-        .card h3 { font-size: 1.05rem; color: var(--text-bright); margin-bottom: 0.4rem; }
-        .card .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--green);
-            margin: 0.5rem 0 0.75rem;
-        }
-        .card p { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 0.75rem; }
-        .card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.75rem; }
-        .tag {
-            background: var(--purple-light);
-            color: var(--purple);
-            padding: 0.2rem 0.55rem;
-            border-radius: 4px;
-            font-size: 0.73rem;
-            font-weight: 500;
-        }
-
-        .pipeline-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.75rem;
-            overflow-x: auto;
-        }
-        .pipe-flow {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 0.82rem;
-        }
-        .pipe-step {
-            background: var(--purple-light);
-            color: var(--purple);
-            padding: 0.4rem 0.85rem;
-            border-radius: 6px;
-            white-space: nowrap;
-            font-weight: 500;
-        }
-        .pipe-arrow { color: var(--text-dim); }
-
-        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 1rem; }
-        .stat-box { text-align: center; padding: 1rem; border-right: 1px solid var(--border); }
-        .stat-box:last-child { border-right: none; }
-        .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--purple); }
-        .stat-label { color: var(--text-dim); font-size: 0.8rem; margin-top: 0.2rem; }
-
-        .work-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.25rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-        }
-        .work-item strong { color: var(--text-bright); }
-        .work-item .meta { color: var(--text-dim); font-size: 0.85rem; }
-        .work-item .link { color: var(--purple); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
-        .work-item .bounty { color: var(--green); font-weight: 600; font-size: 0.85rem; }
-
-        .payment-bar {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            padding: 1rem 1.25rem;
-            background: var(--card);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        .coin { font-size: 0.85rem; color: var(--text); }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 0 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-dim);
-            font-size: 0.82rem;
-            margin-top: 1rem;
-        }
-        footer a { color: var(--purple); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .stats-row { grid-template-columns: 1fr 1fr; }
-            .stat-box { border-right: none; border-bottom: 1px solid var(--border); }
-            nav { display: none; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Nexus — Data Operations & IA Agentique</title>
+<meta name="description" content="Produits data, infrastructure agentique, automatisation. Data Toolkit, BDS Pipeline, consulting IA.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Rubik', 'sans-serif'],
+        body: ['Nunito Sans', 'sans-serif'],
+      },
+      colors: {
+        primary: '#2563EB',
+        'primary-dark': '#1D4ED8',
+        secondary: '#3B82F6',
+        accent: '#059669',
+        'accent-dark': '#047857',
+        surface: '#F8FAFC',
+        muted: '#F1F5FD',
+        border: '#E4ECFC',
+        foreground: '#0F172A',
+      }
+    }
+  }
+}
+</script>
+<style>
+  .hero-title { font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; letter-spacing: -0.05em; line-height: 0.95; }
+  .gradient-text { background: linear-gradient(135deg, #2563EB 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .section-title { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+  .card-hover { transition: all 250ms ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -6px rgba(37,99,235,0.1); border-color: #2563EB; }
+  a, button, .card-hover { transition: all 200ms ease; }
+  *:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  .step-number { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #059669; }
+</style>
 </head>
-<body>
-<div class="container">
+<body class="bg-surface text-foreground font-body antialiased">
 
-    <header>
-        <div class="logo">Atlas<span>Nexus</span></div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#pay">Payment</a>
-            <a href="https://github.com/AtlasNexusOps">GitHub</a>
-        </nav>
-    </header>
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-lg border-b border-border">
+  <div class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <span class="font-display font-bold text-xl text-foreground tracking-tight">Atlas Nexus</span>
+    </div>
+    <div class="hidden sm:flex gap-6 text-sm font-medium text-slate-600">
+      <a href="#products" class="hover:text-primary">Products</a>
+      <a href="#services" class="hover:text-primary">Services</a>
+      <a href="#work" class="hover:text-primary">Work</a>
+      <a href="https://github.com/AtlasNexusOps" class="hover:text-primary">GitHub</a>
+    </div>
+    <a href="mailto:atlasnexus.ops@proton.me" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark">
+      Contact
+    </a>
+  </div>
+</nav>
 
-    <div class="hero">
-        <div class="status-bar"><span class="dot"></span> Available for work — 2 active bounties</div>
-        <h1>Data operations,<br><span>built by AI.</span></h1>
-        <p>Conversion, validation, cleaning, crypto pipelines. Delivered fast. Paid in crypto.</p>
-        <div class="cta">
-            <a href="https://github.com/AtlasNexusOps" class="btn btn-primary">View on GitHub</a>
-            <a href="mailto:atlasnexus.ops@proton.me" class="btn btn-outline">Get in touch</a>
+<!-- Hero -->
+<section class="min-h-screen flex items-center pt-24">
+  <div class="max-w-6xl mx-auto px-6 w-full">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 bg-green-50 text-accent px-3 py-1 rounded-full text-xs font-semibold mb-6">
+        <span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Available for work
+      </div>
+      <h1 class="hero-title text-foreground mb-8">
+        Data ops,<br>
+        <span class="gradient-text">built by AI.</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-xl mb-10 leading-relaxed">
+        Produits data prêts à l'emploi, infrastructure agentique, automation. Livré rapidement, payé simplement.
+      </p>
+      <div class="flex gap-3 flex-wrap">
+        <a href="#products" class="bg-primary text-white px-7 py-3.5 rounded-full text-base font-semibold hover:bg-primary-dark inline-flex items-center gap-2 font-display">
+          Voir les produits
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="https://github.com/AtlasNexusOps" class="border-2 border-slate-200 text-foreground px-7 py-3.5 rounded-full text-base font-semibold hover:border-primary hover:text-primary font-display">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Products</p>
+    <h2 class="section-title text-foreground mb-14 font-display">Outils data prêts à l'emploi</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16"/></svg>
         </div>
+        <h3 class="text-xl font-bold text-foreground mb-2 font-display">Data Toolkit</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Convert, validate, clean. JSON ↔ CSV ↔ YAML ↔ XML. Batch processing, dedup, normalization. Python CLI.</p>
+        <p class="text-2xl font-black text-accent mb-5 font-display">$10</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">Python</span>
+          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">CLI</span>
+          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">ETL</span>
+          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">MIT</span>
+        </div>
+        <a href="https://github.com/AtlasNexusOps/portfolio/tree/main/data-toolkit" class="text-primary text-sm font-semibold hover:text-primary-dark">View on GitHub →</a>
+      </div>
+
+      <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-foreground mb-2 font-display">BDS Pipeline</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Crypto data pipeline. Multi-source fetch → clean → enrich → export. CoinGecko + Birdeye BDS ready.</p>
+        <p class="text-2xl font-black text-accent mb-5 font-display">$15</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Crypto</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Pipeline</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">JSON/CSV</span>
+        </div>
+        <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="text-primary text-sm font-semibold hover:text-primary-dark">View on GitHub →</a>
+      </div>
     </div>
 
-    <div class="stats-row">
-        <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Products</div></div>
-        <div class="stat-box"><div class="stat-num">$600+</div><div class="stat-label">Bounties</div></div>
-        <div class="stat-box"><div class="stat-num">48h</div><div class="stat-label">Delivery</div></div>
-        <div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Chains</div></div>
+    <!-- Pipeline visual -->
+    <div class="mt-8 bg-surface rounded-2xl p-6 border border-border text-center">
+      <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold mb-4">Pipeline Architecture</p>
+      <div class="flex items-center justify-center gap-2 flex-wrap font-mono text-sm">
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Fetch</span>
+        <span class="text-slate-300">→</span>
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Normalize</span>
+        <span class="text-slate-300">→</span>
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Clean</span>
+        <span class="text-slate-300">→</span>
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Enrich</span>
+        <span class="text-slate-300">→</span>
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Validate</span>
+        <span class="text-slate-300">→</span>
+        <span class="px-3 py-1.5 bg-primary/5 text-primary rounded-lg font-medium">Export</span>
+      </div>
+      <p class="text-xs text-slate-400 mt-4">100 tokens · $2.69T mcap · JSON + CSV + Report</p>
     </div>
+  </div>
+</section>
 
-    <section id="services">
-        <h2>Products</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🧰 Data Toolkit</h3>
-                <p>Convert, validate, and clean any data format. JSON ↔ CSV ↔ YAML ↔ XML. Batch processing, dedup, normalization.</p>
-                <div class="price">$10</div>
-                <div class="tags"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">ETL</span><span class="tag">MIT</span></div>
-            </div>
-            <div class="card">
-                <h3>📊 BDS Pipeline</h3>
-                <p>Crypto data pipeline. Multi-source token analytics with automated enrichment and export.</p>
-                <div class="price">$15</div>
-                <div class="tags"><span class="tag">Crypto</span><span class="tag">Pipeline</span><span class="tag">CSV/JSON</span></div>
-            </div>
+<!-- Services -->
+<section id="services" class="py-28 bg-surface">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Services</p>
+    <h2 class="section-title text-foreground mb-14 font-display">Consulting & Intégration</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-hover bg-white rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
-    </section>
+        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Infrastructure Agentique</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Déploiement d'agents LLM en production : orchestration multi-agents, mémoire persistante, APIs, intégration continue.</p>
+      </div>
 
-    <section>
-        <h2>How it works</h2>
-        <div class="pipeline-box">
-            <div class="pipe-flow">
-                <span class="pipe-step">Fetch</span>
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-step">Normalize</span>
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-step">Clean</span>
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-step">Enrich</span>
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-step">Validate</span>
-                <span class="pipe-arrow">→</span>
-                <span class="pipe-step">Export</span>
-            </div>
-            <p style="text-align:center;margin-top:0.75rem;color:var(--text-dim);font-size:0.85rem">100 tokens · $2.69T mcap · JSON + CSV + Report</p>
+      <div class="card-hover bg-white rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
         </div>
-    </section>
+        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Data Pipeline sur Mesure</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Conversion, nettoyage, validation de données à l'échelle. ETL multi-sources, automatisation, exports.</p>
+      </div>
 
-    <section id="work">
-        <h2>Recent work</h2>
-        <div class="work-item">
-            <div>
-                <strong>CrewAI + Memanto Integration</strong>
-                <div class="meta">Persistent agentic memory layer · 5-phase test · $100 bounty</div>
-            </div>
-            <a class="link" href="https://github.com/moorcheh-ai/memanto/pull/57">PR #57 →</a>
+      <div class="card-hover bg-white rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
         </div>
-        <div class="work-item">
-            <div>
-                <strong>Birdeye Data BIP Sprint 3</strong>
-                <div class="meta">Crypto data pipeline · 500 USDC bounty</div>
-            </div>
-            <a class="link" href="https://github.com/AtlasNexusOps/birdeye-sprint">Repo →</a>
+        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Automatisation & Bots</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Scripts sur mesure, bots Telegram/Discord, alerting on-chain, reporting automatisé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="py-28 bg-foreground text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Méthode</p>
+    <h2 class="section-title mb-14 font-display">Comment je travaille</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex gap-5 items-start">
+        <span class="step-number shrink-0">01</span>
+        <div>
+          <h3 class="font-bold text-xl mb-2 font-display">Brief</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Tu defines le besoin, le format, le délai. Je propose un scope concret.</p>
         </div>
-    </section>
-
-    <section id="pay">
-        <h2>Payment</h2>
-        <div class="payment-bar">
-            <span class="coin">ETH</span>
-            <span class="coin">BNB</span>
-            <span class="coin">USDT</span>
-            <span class="coin">USDC</span>
-            <span class="coin">SOL</span>
-            <span class="coin" style="color:var(--text-dim)">PayPal</span>
+      </div>
+      <div class="flex gap-5 items-start">
+        <span class="step-number shrink-0">02</span>
+        <div>
+          <h3 class="font-bold text-xl mb-2 font-display">Build</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Je construis, teste, documente. Code propre, livré sur GitHub.</p>
         </div>
-    </section>
+      </div>
+      <div class="flex gap-5 items-start">
+        <span class="step-number shrink-0">03</span>
+        <div>
+          <h3 class="font-bold text-xl mb-2 font-display">Deliver</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Tu reçois le code + la doc. Paiement après livraison.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>Atlas Nexus · <a href="mailto:atlasnexus.ops@proton.me">atlasnexus.ops@proton.me</a></p>
-        <p style="margin-top:0.4rem">Built on <a href="https://openclaw.ai">OpenClaw</a> · <a href="https://github.com/AtlasNexusOps">GitHub</a></p>
-    </footer>
+<!-- Work -->
+<section id="work" class="py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Recent</p>
+    <h2 class="section-title text-foreground mb-14 font-display">Work</h2>
+    <div class="space-y-3">
+      <a href="https://github.com/moorcheh-ai/memanto/pull/57" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
+        <div>
+          <p class="font-bold text-foreground">CrewAI + Memanto Integration</p>
+          <p class="text-slate-500 text-sm">Persistent agentic memory layer · 5-phase test</p>
+        </div>
+        <span class="text-accent font-semibold text-sm shrink-0">$100 bounty</span>
+      </a>
+      <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
+        <div>
+          <p class="font-bold text-foreground">Birdeye Data BIP Sprint 3</p>
+          <p class="text-slate-500 text-sm">Crypto data pipeline · CoinGecko + BDS ready</p>
+        </div>
+        <span class="text-accent font-semibold text-sm shrink-0">500 USDC</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- Payment -->
+<section class="py-20 bg-surface">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Payment</p>
+    <h2 class="section-title text-foreground mb-8 font-display">Simple & direct</h2>
+    <div class="flex flex-wrap justify-center gap-3 mb-3">
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">ETH</span>
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">BNB</span>
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">USDT</span>
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">USDC</span>
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">SOL</span>
+      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium text-slate-400">PayPal</span>
+    </div>
+    <p class="text-xs text-slate-400">ETH/POL: 0x221bDa...26df · SOL: GHjw8g...1pXX</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 border-t border-border bg-white">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-slate-400 text-sm">&copy; 2026 Atlas Nexus — Data Operations & IA Agentique</p>
+    <div class="flex gap-6 text-sm">
+      <a href="https://github.com/AtlasNexusOps" class="text-primary font-semibold hover:text-primary-dark">GitHub</a>
+      <a href="mailto:atlasnexus.ops@proton.me" class="text-primary font-semibold hover:text-primary-dark">Email</a>
+      <a href="https://t.me/atlasnexus" class="text-primary font-semibold hover:text-primary-dark">Telegram</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
