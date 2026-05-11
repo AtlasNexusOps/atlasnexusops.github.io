@@ -104,7 +104,22 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Products</p>
     <h2 class="section-title text-foreground mb-14 font-display">Outils data prêts à l'emploi</h2>
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+          <span class="text-2xl">🔮</span>
+        </div>
+        <h3 class="text-xl font-bold text-foreground mb-2 font-display">Crypto Dashboard</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Tableau de bord Solana temps réel. Prix, variations 24h, métriques on-chain. Auto-updating.</p>
+        <p class="text-sm font-semibold text-accent mb-5 font-display">Live · Gratuit</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Solana</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Jupiter API</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Live Data</span>
+        </div>
+        <a href="https://atlasnexusops.github.io/crypto-dashboard/" class="text-primary text-sm font-semibold hover:text-primary-dark">Dashboard →</a>
+      </div>
+
       <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
         <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
           <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16"/></svg>
@@ -209,6 +224,13 @@ tailwind.config = {
     <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Recent</p>
     <h2 class="section-title text-foreground mb-14 font-display">Work</h2>
     <div class="space-y-3">
+      <a href="https://github.com/AtlasNexusOps/jupiter-signal" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
+        <div>
+          <p class="font-bold text-foreground">Jupiter × Frontier — Signal Engine</p>
+          <p class="text-slate-500 text-sm">Multi-API correlation · Price + Tokens + Prediction + Trigger</p>
+        </div>
+        <span class="text-accent font-semibold text-sm shrink-0">$3K jupUSD</span>
+      </a>
       <a href="https://github.com/moorcheh-ai/memanto/pull/380" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
         <div>
           <p class="font-bold text-foreground">CrewAI + Memanto Integration</p>
