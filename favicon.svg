@@ -5,5 +5,5 @@
       <stop offset="100%" style="stop-color:#a78bfa"/>
     </linearGradient>
   </defs>
-  <polygon points="18,2 6,18 14,18 10,30 26,12 16,12 22,2" fill="url(#g)"/>
+  <path d="M24 4c-3 1.5-5 4.5-5 8s2 6.5 5 8c-8 1-14-5.5-14-12S16 3 24 4z" fill="url(#g)"/>
 </svg>
