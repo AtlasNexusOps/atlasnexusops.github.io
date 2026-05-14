@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Atlas Nexus — Architecture Agentique IA &amp; Sécurité</title>
-<meta name="description" content="Produits data, infrastructure agentique IA, automatisation. Data Toolkit, BDS Pipeline, scraping, consulting &amp; intégration d'agents LLM.">
+<title>Atlas Nexus — Opérations, Dashboards & Agents IA</title>
+<meta name="description" content="Dashboards live, pipelines data et agents IA opérationnels pour indépendants, équipes et PME. Builds rapides, code visible sur GitHub, documentation incluse.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@ tailwind.config = {
 }
 </script>
 <style>
-  .hero-title { font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; letter-spacing: -0.05em; line-height: 0.95; }
+  .hero-title { font-size: clamp(2.45rem, 6.6vw, 5.15rem); font-weight: 900; letter-spacing: -0.055em; line-height: 0.98; }
   .gradient-text { background: linear-gradient(135deg, #2563EB 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .glow-word { position: relative; display: inline-block; background: linear-gradient(110deg, #0F172A 0%, #2563EB 32%, #7C3AED 56%, #059669 82%, #0F172A 100%); background-size: 240% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: agenticGlow 3.8s ease-in-out infinite; filter: drop-shadow(0 0 18px rgba(37,99,235,.22)); }
   .glow-word::after { content: ""; position: absolute; left: 2%; right: 2%; bottom: .03em; height: .16em; border-radius: 999px; background: linear-gradient(90deg, rgba(37,99,235,.0), rgba(37,99,235,.42), rgba(5,150,105,.34), rgba(37,99,235,.0)); filter: blur(5px); z-index: -1; }
@@ -59,144 +59,194 @@ tailwind.config = {
 <!-- Nav -->
 <nav class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-lg border-b border-border">
   <div class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
-    <div class="flex items-center gap-3">
+    <a href="#top" class="flex items-center gap-3" aria-label="Atlas Nexus accueil">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       </div>
       <span class="font-display font-bold text-xl text-foreground tracking-tight">Atlas Nexus</span>
-    </div>
-    <div class="hidden sm:flex gap-6 text-sm font-medium text-slate-600">
-      <a href="#products" class="hover:text-primary">Products</a>
-      <a href="#services" class="hover:text-primary">Services</a>
-      <a href="#work" class="hover:text-primary">Work</a>
+    </a>
+    <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+      <a href="#work" class="hover:text-primary">Réalisations</a>
+      <a href="#offers" class="hover:text-primary">Offres</a>
+      <a href="#why" class="hover:text-primary">Pourquoi</a>
       <a href="https://github.com/AtlasNexusOps" class="hover:text-primary">GitHub</a>
     </div>
-    <a href="mailto:alexandre.chahiba@gmail.com" class="cursor-pointer bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark">
+    <a href="mailto:alexandre.chahiba@gmail.com?subject=Micro-build%20Atlas%20Nexus" class="cursor-pointer bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark">
       Contact
     </a>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="min-h-screen flex items-center pt-24 relative overflow-hidden">
+<section id="top" class="min-h-screen flex items-center pt-24 relative overflow-hidden">
   <div class="hero-orb"></div>
   <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
-    <div class="max-w-3xl">
+    <div class="max-w-4xl">
       <a href="https://comeup.com/fr/service/525386/deployer-vos-agents-ia-autonomes" class="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold mb-6 hover:bg-purple-100 transition">
-        <span class="w-1.5 h-1.5 bg-purple-600 rounded-full animate-pulse"></span> ⚡ Agents IA sur mesure — 45€ sur ComeUp
+        <span class="w-1.5 h-1.5 bg-purple-600 rounded-full animate-pulse"></span> Offre ComeUp disponible — agents IA sur mesure dès 45€
       </a>
       <h1 class="hero-title text-foreground mb-8">
-        <span class="glow-word">Architecture</span><br><span class="glow-word">Agentique</span><br><span class="gradient-text">IA &amp; Sécurité</span>
+        <span class="glow-word">Opérations,</span><br><span class="glow-word">Dashboards</span><br><span class="gradient-text">&amp; Agents IA</span>
       </h1>
-      <p class="text-lg sm:text-xl text-slate-600 max-w-xl mb-10 leading-relaxed">
-        Data ops &amp; automatisation par IA. Produits data, infrastructure agentique, conseil.
+      <p class="text-2xl sm:text-3xl font-display font-extrabold text-foreground max-w-3xl mb-5 leading-tight">
+        Pour indépendants, équipes et PME.
+      </p>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
+        Je vous aide pour vos opérations, votre automatisation, et le déploiement d'IA agentiques.
       </p>
       <div class="flex gap-3 flex-wrap">
-        <a href="#products" class="bg-primary text-white px-7 py-3.5 rounded-full text-base font-semibold hover:bg-primary-dark inline-flex items-center gap-2 font-display">
-          Voir les produits
+        <a href="#work" class="bg-primary text-white px-7 py-3.5 rounded-full text-base font-semibold hover:bg-primary-dark inline-flex items-center gap-2 font-display">
+          Voir les réalisations
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="https://comeup.com/fr/service/525386/deployer-vos-agents-ia-autonomes" class="bg-purple-600 text-white px-7 py-3.5 rounded-full text-base font-semibold hover:bg-purple-700 font-display">
-          Commandez vos IA agentiques — 45€
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=Demande%20de%20micro-build%20Atlas%20Nexus" class="bg-white border-2 border-primary text-primary px-7 py-3.5 rounded-full text-base font-semibold hover:bg-primary hover:text-white font-display">
+          Demander un micro-build
         </a>
         <a href="https://atlasnexusops.github.io/markets-dashboard/" class="border-2 border-slate-200 text-foreground px-7 py-3.5 rounded-full text-base font-semibold hover:border-primary hover:text-primary font-display">
-          Markets Command Deck
-        </a>
-        <a href="https://github.com/AtlasNexusOps" class="border-2 border-slate-200 text-foreground px-7 py-3.5 rounded-full text-base font-semibold hover:border-primary hover:text-primary font-display">
-          GitHub
+          Markets Dashboard
         </a>
       </div>
+      <p class="mt-5 text-sm text-slate-500">Builds courts, livrables vérifiables, code GitHub quand le projet le permet.</p>
     </div>
   </div>
 </section>
 
 <!-- Products -->
-<section id="products" class="py-28 bg-white">
+<section id="products" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Products</p>
-    <h2 class="section-title text-foreground mb-14 font-display">Outils data prêts à l'emploi</h2>
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Produits</p>
+    <h2 class="section-title text-foreground mb-12 font-display">Démonstrations utiles, pas seulement décoratives</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="card-hover market-card bg-surface rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-          <span class="text-2xl">🔮</span>
-        </div>
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">🔮</span></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Markets Dashboard</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">6 classes d'actifs en direct — Crypto, Actions, ETF, Indices, Forex, Matières premières. 100+ instruments.</p>
-        <p class="text-sm font-semibold text-accent mb-5 font-display">Live · Yahoo Finance + TradingView</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Radar live multi-actifs : crypto, actions, ETF, indices, forex et commodities.</p>
+        <p class="text-sm font-semibold text-accent mb-5 font-display">GitHub Pages · Yahoo Finance · TradingView</p>
         <div class="flex flex-wrap gap-2 mb-5">
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">6 asset classes</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">TradingView</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">⚡ Momentum Scanner</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Live Data</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Dashboard live</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Hawkeye V4</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">100+ actifs</span>
         </div>
-        <a href="https://atlasnexusops.github.io/markets-dashboard/" class="text-primary text-sm font-semibold hover:text-primary-dark">Dashboard →</a>
+        <a href="https://atlasnexusops.github.io/markets-dashboard/" class="text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
       </div>
-
       <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16"/></svg>
-        </div>
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16"/></svg></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Data Toolkit</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">Convert, validate, clean. JSON ↔ CSV ↔ YAML ↔ XML. Batch processing, dedup, normalization. Python CLI.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Conversion, validation, nettoyage : JSON, CSV, YAML, XML, batch processing.</p>
         <p class="text-sm font-semibold text-accent mb-5 font-display">Open source — MIT</p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">Python</span>
-          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">CLI</span>
-          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">ETL</span>
-          <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">MIT</span>
-        </div>
-        <a href="https://github.com/AtlasNexusOps/datatoolkit" class="text-primary text-sm font-semibold hover:text-primary-dark">Data Toolkit →</a>
+        <div class="flex flex-wrap gap-2 mb-5"><span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">Python</span><span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">CLI</span><span class="px-3 py-1 bg-primary/5 text-primary text-xs font-medium rounded-full">ETL</span></div>
+        <a href="https://github.com/AtlasNexusOps/datatoolkit" class="text-primary text-sm font-semibold hover:text-primary-dark">Code GitHub →</a>
       </div>
-
       <div class="card-hover bg-surface rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-        </div>
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">BDS Pipeline</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">Crypto data pipeline. Multi-source fetch → clean → enrich → export. CoinGecko + Birdeye BDS ready.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Pipeline crypto : fetch multi-source, clean, enrichissement, exports JSON/CSV.</p>
         <p class="text-sm font-semibold text-accent mb-5 font-display">Open source — MIT</p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Crypto</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Pipeline</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">JSON/CSV</span>
-        </div>
-        <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="text-primary text-sm font-semibold hover:text-primary-dark">BDS Pipeline →</a>
+        <div class="flex flex-wrap gap-2 mb-5"><span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Crypto</span><span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">API</span><span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">JSON/CSV</span></div>
+        <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="text-primary text-sm font-semibold hover:text-primary-dark">Code GitHub →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section id="services" class="py-28 bg-surface">
+<!-- Offers -->
+<section id="offers" class="py-28 bg-surface">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Services</p>
-    <h2 class="section-title text-foreground mb-14 font-display">Consulting & Intégration</h2>
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Offres</p>
+    <h2 class="section-title text-foreground mb-5 font-display">Micro-builds pour débloquer une opération concrète</h2>
+    <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">Chaque offre est pensée pour livrer un outil utilisable rapidement : scope court, sortie vérifiable, documentation minimale incluse.</p>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="card-hover agentic-card bg-white rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Infrastructure Agentique</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Déploiement d'agents LLM en production : orchestration multi-agents, mémoire persistante, APIs, intégration continue.</p>
-      </div>
+      <article class="card-hover market-card rounded-2xl p-8 border border-border bg-white">
+        <p class="text-sm font-bold text-accent mb-2">A. Dashboard live</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Dashboard web + données</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> dashboard web, données structurées, hébergement GitHub Pages.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> finance, crypto, veille, reporting, suivi opérationnel.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 90€ <span class="text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=Dashboard%20live%20Atlas%20Nexus" class="inline-flex text-primary font-semibold hover:text-primary-dark">Demander ce build →</a>
+      </article>
+      <article class="card-hover rounded-2xl p-8 border border-border bg-white">
+        <p class="text-sm font-bold text-primary mb-2">B. Pipeline data</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Fetch · clean · enrich · export</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> script Python avec récupération, nettoyage, enrichissement et exports JSON/CSV.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> scraping, API, dataset, automatisation, reporting.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 75€</p>
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=Pipeline%20data%20Atlas%20Nexus" class="inline-flex text-primary font-semibold hover:text-primary-dark">Demander ce build →</a>
+      </article>
+      <article class="card-hover agentic-card rounded-2xl p-8 border border-border bg-white">
+        <p class="text-sm font-bold text-purple-600 mb-2">C. Agent IA opérationnel</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Bot, workflow ou reporting</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> bot, workflow automatisé, reporting, intégration API.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> Telegram, Discord, monitoring, assistant métier.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 45€ <span class="text-sm font-semibold text-slate-500">via ComeUp</span></p>
+        <a href="https://comeup.com/fr/service/525386/deployer-vos-agents-ia-autonomes" class="inline-flex text-purple-600 font-semibold hover:text-purple-800">Voir l'offre ComeUp →</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <div class="card-hover bg-white rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Data Pipeline sur Mesure</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Conversion, nettoyage, validation de données à l'échelle. ETL multi-sources, automatisation, exports.</p>
+<!-- Why -->
+<section id="why" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+      <div>
+        <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Pourquoi Atlas Nexus</p>
+        <h2 class="section-title text-foreground mb-5 font-display">Crédible parce que livrable.</h2>
+        <p class="text-slate-600 leading-relaxed">L'objectif n'est pas de vendre une promesse magique. C'est de construire un outil fonctionnel, visible, documenté et utilisable par votre activité.</p>
       </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Livraison rapide</p><p class="text-sm text-slate-600">Scope court, priorisation claire, résultat vérifiable.</p></div>
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Code visible sur GitHub</p><p class="text-sm text-slate-600">Quand le projet le permet, le code reste inspectable.</p></div>
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Documentation incluse</p><p class="text-sm text-slate-600">README, commandes utiles, limites connues.</p></div>
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Déploiement simple</p><p class="text-sm text-slate-600">GitHub Pages, scripts Python, exports standards.</p></div>
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Data / IA / automatisation</p><p class="text-sm text-slate-600">Même logique : transformer un flux en outil opérationnel.</p></div>
+        <div class="bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Pas de promesse magique</p><p class="text-sm text-slate-600">Un outil fonctionnel livré, pas du storytelling IA.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="card-hover bg-white rounded-2xl p-8 border border-border">
-        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+<!-- Work -->
+<section id="work" class="py-28 bg-surface">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Réalisations</p>
+    <h2 class="section-title text-foreground mb-5 font-display">Mini case studies</h2>
+    <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">Quelques builds récents montrant le type de sortie livrable : dashboard, pipeline, moteur de signaux, intégration API.</p>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <article class="card-hover market-card bg-white rounded-2xl p-7 border border-border flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Dashboard live</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Markets Dashboard</h3>
+        <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
+          <p><strong class="text-foreground">Problème :</strong> surveiller plusieurs classes d'actifs sans ouvrir 6 plateformes.</p>
+          <p><strong class="text-foreground">Build / stack :</strong> Yahoo Finance, TradingView widgets, scanner de pression marché, GitHub Pages.</p>
+          <p><strong class="text-foreground">Output :</strong> dashboard live multi-actifs avec crypto, actions, ETF, indices, forex, commodities.</p>
         </div>
-        <h3 class="text-lg font-bold text-foreground mb-3 font-display">Automatisation & Bots</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Scripts sur mesure, bots Telegram/Discord, alerting on-chain, reporting automatisé.</p>
-      </div>
+        <div class="flex gap-3 flex-wrap mt-6"><a href="https://atlasnexusops.github.io/markets-dashboard/" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">Live Demo</a><a href="https://github.com/AtlasNexusOps/markets-dashboard" class="border border-border px-4 py-2 rounded-full text-sm font-semibold hover:border-primary hover:text-primary">GitHub</a></div>
+      </article>
+      <article class="card-hover bg-white rounded-2xl p-7 border border-border flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Signal engine</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Jupiter Signal</h3>
+        <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
+          <p><strong class="text-foreground">Problème :</strong> croiser plusieurs APIs crypto pour détecter des signaux exploitables par inspection humaine.</p>
+          <p><strong class="text-foreground">Build / stack :</strong> Python, APIs Jupiter / Frontier, corrélation prix, tokens, prédictions et triggers.</p>
+          <p><strong class="text-foreground">Output :</strong> moteur de signal multi-source avec scoring et exports structurés.</p>
+        </div>
+        <div class="flex gap-3 flex-wrap mt-6"><a href="https://github.com/AtlasNexusOps/jupiter-signal" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">GitHub</a></div>
+      </article>
+      <article class="card-hover bg-white rounded-2xl p-7 border border-border flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Pipeline data</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Birdeye Sprint 4</h3>
+        <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
+          <p><strong class="text-foreground">Problème :</strong> transformer des données crypto hétérogènes en dataset exploitable et comparable.</p>
+          <p><strong class="text-foreground">Build / stack :</strong> Python, CoinGecko, Birdeye/BDS, enrichissement multi-exchange, exports JSON/CSV.</p>
+          <p><strong class="text-foreground">Output :</strong> pipeline avancé de collecte, nettoyage, enrichissement et livraison de données.</p>
+        </div>
+        <div class="flex gap-3 flex-wrap mt-6"><a href="https://github.com/AtlasNexusOps/birdeye-sprint4" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">GitHub</a></div>
+      </article>
+    </div>
+    <div class="mt-8 grid md:grid-cols-3 gap-3">
+      <a href="https://github.com/moorcheh-ai/memanto/pull/380" class="card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">CrewAI + Memanto Integration</p><p class="text-slate-500 text-sm">Mémoire agentique persistante · tests d'intégration</p></a>
+      <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">Birdeye Data BIP Sprint 3</p><p class="text-slate-500 text-sm">Pipeline crypto · CoinGecko + BDS</p></a>
+      <a href="https://github.com/AtlasNexusOps/proxiesx-services" class="card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">Proxies.sx Scraping Suite</p><p class="text-slate-500 text-sm">Microservices Python · scraping · x402</p></a>
     </div>
   </div>
 </section>
@@ -207,97 +257,23 @@ tailwind.config = {
     <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Méthode</p>
     <h2 class="section-title mb-14 font-display">Comment je travaille</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="flex gap-5 items-start">
-        <span class="step-number shrink-0">01</span>
-        <div>
-          <h3 class="font-bold text-xl mb-2 font-display">Brief</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Vous définissez le besoin, le format, le délai. Je propose un scope concret.</p>
-        </div>
-      </div>
-      <div class="flex gap-5 items-start">
-        <span class="step-number shrink-0">02</span>
-        <div>
-          <h3 class="font-bold text-xl mb-2 font-display">Build</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Je construis, teste, documente. Code propre, livré sur GitHub.</p>
-        </div>
-      </div>
-      <div class="flex gap-5 items-start">
-        <span class="step-number shrink-0">03</span>
-        <div>
-          <h3 class="font-bold text-xl mb-2 font-display">Deliver</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Vous recevez le code + la doc. Paiement après livraison.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Work -->
-<section id="work" class="py-28 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Recent</p>
-    <h2 class="section-title text-foreground mb-14 font-display">Work</h2>
-    <div class="space-y-3">
-      <a href="https://github.com/AtlasNexusOps/markets-dashboard" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">Markets Dashboard — 6 Asset Classes</p>
-          <p class="text-slate-500 text-sm">Crypto · Actions · ETF · Indices · Forex · Commodities · ⚡ Momentum Scanner · TradingView</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">Live</span>
-      </a>
-      <a href="https://github.com/AtlasNexusOps/jupiter-signal" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">Jupiter × Frontier — Signal Engine</p>
-          <p class="text-slate-500 text-sm">Multi-API correlation · Price + Tokens + Prediction + Trigger</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">$3K jupUSD</span>
-      </a>
-      <a href="https://github.com/moorcheh-ai/memanto/pull/380" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">CrewAI + Memanto Integration</p>
-          <p class="text-slate-500 text-sm">Mémoire agentique persistante · 5 phases de test</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">$100 bounty</span>
-      </a>
-      <a href="https://github.com/AtlasNexusOps/birdeye-sprint" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">Birdeye Data BIP Sprint 3</p>
-          <p class="text-slate-500 text-sm">Pipeline data crypto · CoinGecko + BDS</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">500 USDC</span>
-      </a>
-      <a href="https://github.com/AtlasNexusOps/proxiesx-services" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">Proxies.sx — Scraping Suite</p>
-          <p class="text-slate-500 text-sm">5 microservices Python · Amazon, TikTok, FB Marketplace · x402 gateway</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">$375 SX</span>
-      </a>
-      <a href="https://github.com/AtlasNexusOps/birdeye-sprint4" class="card-hover flex justify-between items-center bg-surface rounded-xl p-5 border border-border">
-        <div>
-          <p class="font-bold text-foreground">Birdeye Data BIP Sprint 4</p>
-          <p class="text-slate-500 text-sm">Pipeline avancé · multi-exchange · actif</p>
-        </div>
-        <span class="text-accent font-semibold text-sm shrink-0">$500 USDC</span>
-      </a>
+      <div class="flex gap-5 items-start"><span class="step-number shrink-0">01</span><div><h3 class="font-bold text-xl mb-2 font-display">Brief</h3><p class="text-slate-300 text-sm leading-relaxed">Vous définissez le besoin, les sources, le format et le délai. Je propose un scope concret.</p></div></div>
+      <div class="flex gap-5 items-start"><span class="step-number shrink-0">02</span><div><h3 class="font-bold text-xl mb-2 font-display">Build</h3><p class="text-slate-300 text-sm leading-relaxed">Je construis, teste, documente. Code propre, livré sur GitHub si possible.</p></div></div>
+      <div class="flex gap-5 items-start"><span class="step-number shrink-0">03</span><div><h3 class="font-bold text-xl mb-2 font-display">Deliver</h3><p class="text-slate-300 text-sm leading-relaxed">Vous recevez le livrable, les commandes utiles, les limites connues et les prochaines options.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- Payment -->
-<section class="py-20 bg-surface">
+<section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6 text-center">
-    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Payment</p>
-    <h2 class="section-title text-foreground mb-8 font-display">Simple & direct</h2>
-    <div class="flex flex-wrap justify-center gap-3 mb-3">
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">ETH</span>
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">BNB</span>
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">USDT</span>
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">USDC</span>
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium">SOL</span>
-      <span class="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium text-slate-400">PayPal</span>
+    <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Paiement</p>
+    <h2 class="section-title text-foreground mb-5 font-display">Simple, pro, adapté au scope</h2>
+    <p class="text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">Paiement : ComeUp, PayPal, crypto sur demande. Les détails pratiques sont transmis après cadrage du micro-build.</p>
+    <div class="flex gap-3 justify-center flex-wrap">
+      <a href="mailto:alexandre.chahiba@gmail.com?subject=Micro-build%20Atlas%20Nexus" class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark">Demander un micro-build</a>
+      <a href="https://comeup.com/fr/service/525386/deployer-vos-agents-ia-autonomes" class="border border-border px-6 py-3 rounded-full font-semibold hover:border-purple-500 hover:text-purple-700">Voir ComeUp</a>
     </div>
-    <p class="text-xs text-slate-400">ETH/POL: 0x221bDa369a19A25144ef9afb644bB555184a26df · SOL: GHjw8g7S4GrUqTriUErWoJ4ZAf6JoffW7SqUbjSP1pXX</p>
   </div>
 </section>
 
