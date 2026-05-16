@@ -1,5 +1,8 @@
 # Atlas Nexus — Portfolio
 
+[![CI](https://github.com/AtlasNexusOps/atlasnexusops.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/AtlasNexusOps/atlasnexusops.github.io/actions) [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+
+
 Conseil, opérations, IA agentique et UI pour indépendants, équipes et PME.
 
 → [atlasnexusops.github.io](https://atlasnexusops.github.io/)
