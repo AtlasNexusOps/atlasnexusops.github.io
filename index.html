@@ -97,7 +97,13 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
     <a href="#top" class="flex items-center gap-3" aria-label="Atlas Nexus accueil">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.7A8.7 8.7 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z"/></svg>
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="6" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="19" cy="13" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="5" cy="13" r="2.5" fill="currentColor" stroke="none"/>
+          <line x1="12" y1="8.5" x2="17.5" y2="11.5"/>
+          <line x1="6.5" y1="11.5" x2="12" y2="8.5"/>
+        </svg>
       </div>
       <span class="font-display font-bold text-xl text-foreground tracking-tight">Atlas Nexus</span>
     </a>
@@ -151,39 +157,39 @@ tailwind.config = {
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Markets Dashboard -->
-      <div class="reveal reveal-delay-1 card-hover market-card bg-surface rounded-2xl p-8 border border-border">
+      <div class="reveal reveal-delay-1 card-hover market-card bg-surface rounded-2xl p-8 border border-border flex flex-col">
         <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">🔮</span></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Markets Dashboard</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-4">Radar live multi-actifs : crypto, actions, ETF, indices, forex et commodities.</p>
-        <p class="text-sm font-semibold text-accent mb-5 font-display">GitHub Pages · Yahoo Finance · TradingView</p>
-        <div class="flex flex-wrap gap-2 mb-5">
+        <p class="text-sm font-semibold text-accent mb-4 font-display">GitHub Pages · Yahoo Finance · TradingView</p>
+        <div class="flex flex-wrap gap-2 mb-4">
           <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Dashboard live</span>
           <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Hawkeye V4</span>
           <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">100+ actifs</span>
         </div>
-        <a href="https://atlasnexusops.github.io/markets-dashboard/" class="text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
+        <a href="https://atlasnexusops.github.io/markets-dashboard/" class="mt-auto text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
       </div>
       <!-- Agentic Verification -->
-      <div class="reveal reveal-delay-2 card-hover bg-surface rounded-2xl p-8 border border-border">
+      <div class="reveal reveal-delay-2 card-hover bg-surface rounded-2xl p-8 border border-border flex flex-col">
         <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6"><svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Agentic Verification</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-4">Landing page for the first on-chain AI bounty marketplace with ERC-8004 agent identity. PR submitted on verified Celo Mainnet protocol.</p>
-        <p class="text-sm font-semibold text-accent mb-5 font-display">ERC-8004 · Celo Mainnet · Verified Smart Contract</p>
-        <div class="flex flex-wrap gap-2 mb-5"><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">Next.js 15</span><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">React 19</span><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">Smart Contract</span></div>
-        <a href="https://atlasnexusops.github.io/agentic-verification/" class="text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
+        <p class="text-sm font-semibold text-accent mb-4 font-display">ERC-8004 · Celo Mainnet · Verified Smart Contract</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">Next.js 15</span><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">React 19</span><span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium rounded-full">Smart Contract</span></div>
+        <a href="https://atlasnexusops.github.io/agentic-verification/" class="mt-auto text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
       </div>
       <!-- Framer Motion UI -->
-      <div class="reveal reveal-delay-3 motion-card rounded-2xl p-8 border border-border bg-white">
+      <div class="reveal reveal-delay-3 motion-card rounded-2xl p-8 border border-border bg-white flex flex-col">
         <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">✨</span></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Framer Motion UI</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-4">Pages React animées : transitions, scroll reveals, parallax, gestures, entrances.</p>
-        <p class="text-sm font-semibold text-purple-600 mb-5 font-display">Skill · Demo · GitHub Pages</p>
-        <div class="flex flex-wrap gap-2 mb-5">
+        <p class="text-sm font-semibold text-purple-600 mb-4 font-display">Skill · Demo · GitHub Pages</p>
+        <div class="flex flex-wrap gap-2 mb-4">
           <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">React</span>
           <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">Framer Motion</span>
           <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">11 patterns</span>
         </div>
-        <a href="https://atlasnexusops.github.io/framer-motion-ui/" class="text-purple-600 text-sm font-semibold hover:text-purple-800">Live demo →</a>
+        <a href="https://atlasnexusops.github.io/framer-motion-ui/" class="mt-auto text-purple-600 text-sm font-semibold hover:text-purple-800">Live demo →</a>
       </div>
     </div>
   </div>
