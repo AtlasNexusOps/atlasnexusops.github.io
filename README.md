@@ -11,5 +11,5 @@ Conseil, opérations, IA agentique et UI pour indépendants, équipes et PME.
 
 - **Dashboard live** — dashboards web multi-actifs, GitHub Pages
 - **UI Animée** — pages React avec Framer Motion (landing pages, composants, transitions)
-- **Agent IA opérationnel** — bots Telegram/Discord, workflows, monitoring
+- **Agent IA opérationnel** — bots Telegram/Discord, workflows, CLI
 - **Pipeline data** — fetch, clean, enrich, export JSON/CSV
