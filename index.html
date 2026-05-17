@@ -119,33 +119,38 @@ tailwind.config = {
   .motion-card:hover { box-shadow: 0 22px 70px -32px rgba(124,58,237,.45); transform: translateY(-4px); }
 
   /* ATLAS_CARD_THEME_SWITCH_20260517: Framer purple, Agentic Identity blue */
-  .framer-purple-card { border-color: rgba(124,58,237,.24)!important; box-shadow: 0 18px 52px -34px rgba(124,58,237,.58); background: linear-gradient(145deg, #ffffff 0%, #fbf7ff 52%, #f5efff 100%); }
-  .framer-purple-card::before { background: radial-gradient(circle at 15% 0%, rgba(124,58,237,.13), transparent 38%), radial-gradient(circle at 95% 20%, rgba(168,85,247,.10), transparent 34%); }
+  .framer-purple-card { position: relative; overflow: hidden; border-color: rgba(124,58,237,.24)!important; box-shadow: 0 18px 52px -34px rgba(124,58,237,.58); background: linear-gradient(145deg, #ffffff 0%, #fbf7ff 52%, #f5efff 100%); }
+  .framer-purple-card::before { content: ""; position: absolute; inset: -1px; pointer-events: none; background: radial-gradient(circle at 15% 0%, rgba(124,58,237,.13), transparent 38%), radial-gradient(circle at 95% 20%, rgba(168,85,247,.10), transparent 34%); }
   .framer-purple-card:hover { box-shadow: 0 22px 70px -32px rgba(124,58,237,.68); border-color: rgba(124,58,237,.40)!important; }
+  .framer-purple-card > * { position: relative; }
   .framer-purple-card .framer-icon-bg { background: rgba(124,58,237,.10)!important; }
   .framer-purple-card .framer-accent { color: #7c3aed!important; }
   .framer-purple-card .framer-chip { background: rgba(124,58,237,.08)!important; color: #6d28d9!important; }
   .dark .framer-purple-card { background: linear-gradient(145deg, #111827 0%, #1a1530 52%, #241442 100%); border-color: rgba(167,139,250,.28)!important; box-shadow: 0 18px 52px -34px rgba(0,0,0,.6); }
-  .dark .framer-purple-card::before { background: radial-gradient(circle at 15% 0%, rgba(167,139,250,.17), transparent 38%), radial-gradient(circle at 95% 20%, rgba(124,58,237,.14), transparent 34%); }
+  .dark .framer-purple-card::before { content: ""; position: absolute; inset: -1px; pointer-events: none; background: radial-gradient(circle at 15% 0%, rgba(167,139,250,.17), transparent 38%), radial-gradient(circle at 95% 20%, rgba(124,58,237,.14), transparent 34%); }
+  .dark .framer-purple-card > * { position: relative; }
   .dark .framer-purple-card .framer-icon-bg { background: rgba(124,58,237,.20)!important; }
   .dark .framer-purple-card .framer-accent { color: #C4B5FD!important; }
   .dark .framer-purple-card .framer-chip { background: rgba(124,58,237,.18)!important; color: #DDD6FE!important; }
 
-  .agentic-blue-card { border-color: rgba(37,99,235,.22)!important; box-shadow: 0 18px 52px -34px rgba(37,99,235,.55); background: linear-gradient(145deg, #ffffff 0%, #f7fbff 52%, #eef8ff 100%); }
-  .agentic-blue-card::before { background: radial-gradient(circle at 15% 0%, rgba(37,99,235,.12), transparent 38%), radial-gradient(circle at 95% 20%, rgba(14,165,233,.10), transparent 34%); }
+  .agentic-blue-card { position: relative; overflow: hidden; border-color: rgba(37,99,235,.22)!important; box-shadow: 0 18px 52px -34px rgba(37,99,235,.55); background: linear-gradient(145deg, #ffffff 0%, #f7fbff 52%, #eef8ff 100%); }
+  .agentic-blue-card::before { content: ""; position: absolute; inset: -1px; pointer-events: none; background: radial-gradient(circle at 15% 0%, rgba(37,99,235,.12), transparent 38%), radial-gradient(circle at 95% 20%, rgba(14,165,233,.10), transparent 34%); }
   .agentic-blue-card:hover { box-shadow: 0 22px 70px -32px rgba(37,99,235,.65); border-color: rgba(37,99,235,.36)!important; }
+  .agentic-blue-card > * { position: relative; }
   .agentic-blue-card .agentic-icon-bg { background: rgba(37,99,235,.10)!important; }
   .agentic-blue-card .agentic-accent { color: #2563eb!important; }
   .agentic-blue-card .agentic-chip { background: rgba(37,99,235,.07)!important; color: #1d4ed8!important; }
   .dark .agentic-blue-card { background: linear-gradient(145deg, #111827 0%, #111d30 52%, #0e1f2d 100%); border-color: rgba(59,130,246,.25)!important; box-shadow: 0 18px 52px -34px rgba(0,0,0,.6); }
-  .dark .agentic-blue-card::before { background: radial-gradient(circle at 15% 0%, rgba(59,130,246,.15), transparent 38%), radial-gradient(circle at 95% 20%, rgba(14,165,233,.12), transparent 34%); }
+  .dark .agentic-blue-card::before { content: ""; position: absolute; inset: -1px; pointer-events: none; background: radial-gradient(circle at 15% 0%, rgba(59,130,246,.15), transparent 38%), radial-gradient(circle at 95% 20%, rgba(14,165,233,.12), transparent 34%); }
+  .dark .agentic-blue-card > * { position: relative; }
   .dark .agentic-blue-card .agentic-icon-bg { background: rgba(59,130,246,.16)!important; }
   .dark .agentic-blue-card .agentic-accent { color: #93C5FD!important; }
   .dark .agentic-blue-card .agentic-chip { background: rgba(59,130,246,.14)!important; color: #BFDBFE!important; }
 
   .offer-card { display:flex; flex-direction:column; }
   .offer-card .offer-spacer { flex:1 1 auto; }
-  .offer-card .offer-price { margin-top:auto; }
+  .offer-card .offer-price { margin-top:auto; line-height:1.15; }
+  .offer-card .offer-quote { display:block; margin-top:.35rem; line-height:1.25; }
 
   /* ── Accessibility ── */
   @media (prefers-reduced-motion: reduce) {
@@ -310,7 +315,7 @@ tailwind.config = {
         </div>
       </div>
       <!-- Framer Motion UI -->
-      <div class="reveal reveal-delay-2 motion-card framer-purple-card rounded-2xl p-8 border border-border bg-white flex flex-col">
+      <div class="reveal reveal-delay-2 framer-purple-card rounded-2xl p-8 border border-border bg-white flex flex-col">
         <div class="w-12 h-12 framer-icon-bg rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">✨</span></div>
         <h3 class="text-xl font-bold text-foreground dark:text-dark-foreground mb-2 font-display">Framer Motion UI</h3>
         <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">Landing page, transitions, scroll reveals, parallax, gestures et entrances.</p>
@@ -327,7 +332,7 @@ tailwind.config = {
         </div>
       </div>
       <!-- Identité Agentique -->
-      <div class="reveal reveal-delay-3 motion-card agentic-blue-card rounded-2xl p-8 border border-border bg-white flex flex-col">
+      <div class="reveal reveal-delay-3 agentic-blue-card rounded-2xl p-8 border border-border bg-white flex flex-col">
         <div class="w-12 h-12 agentic-icon-bg rounded-xl flex items-center justify-center mb-6"><svg class="w-6 h-6 agentic-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
         <h3 class="text-xl font-bold text-foreground dark:text-dark-foreground mb-2 font-display">Identité Agentique</h3>
         <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">Landing page pour la première marketplace de bounties IA on-chain avec identité d'agent on-chain (Celo Identity ERC-721). Déployée avec Next.js SSR.</p>
@@ -357,25 +362,25 @@ tailwind.config = {
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> site vitrine, dashboard, app web, données structurées, hébergement.</p>
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> indépendants, PME, SaaS, finance, veille, reporting.</p>
         <div class="offer-spacer"></div>
-        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 90€ <span class="text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
+        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 90€ <span class="offer-quote text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
         <a href="#contact" class="inline-flex text-primary font-semibold hover:text-primary-dark">Demander ce build →</a>
       </article>
-      <article class="reveal reveal-delay-2 card-hover agentic-card agentic-blue-card offer-card rounded-2xl p-8 border border-border bg-white">
+      <article class="reveal reveal-delay-2 card-hover agentic-blue-card offer-card rounded-2xl p-8 border border-border bg-white">
         <p class="text-sm font-bold agentic-accent mb-2">B. Agent IA opérationnel</p>
         <h3 class="text-2xl font-bold text-foreground mb-4 font-display">IA agentique</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> IA agentique professionnelle, workflow automatisé, reporting, intégration API.</p>
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> Telegram, Discord, CLI, vrai copilote.</p>
         <div class="offer-spacer"></div>
-        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 75€ <span class="text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
+        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 75€ <span class="offer-quote text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
         <a href="#contact" class="inline-flex agentic-accent font-semibold hover:text-primary-dark">Demander ce build →</a>
       </article>
-      <article class="reveal reveal-delay-3 motion-card framer-purple-card offer-card rounded-2xl p-8 border border-border bg-white">
+      <article class="reveal reveal-delay-3 framer-purple-card offer-card rounded-2xl p-8 border border-border bg-white">
         <p class="text-sm font-bold framer-accent mb-2">C. UI Animée</p>
         <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Pages React · Framer Motion</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> landing page, composants animés, transitions, scroll reveals, gestures.</p>
         <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> SaaS, portfolios, dashboards, pages de vente, onboarding.</p>
         <div class="offer-spacer"></div>
-        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 50€ <span class="text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
+        <p class="offer-price text-xl font-extrabold text-foreground mb-6 font-display">À partir de 50€ <span class="offer-quote text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
         <a href="#contact" class="inline-flex framer-accent font-semibold hover:text-primary-dark">Demander ce build →</a>
       </article>
     </div>
@@ -422,7 +427,7 @@ tailwind.config = {
         </div>
         <div class="flex gap-3 flex-wrap mt-6"><a href="https://atlasnexusops.github.io/markets-dashboard/" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">Démo live</a><a href="https://github.com/AtlasNexusOps/markets-dashboard" class="border border-border px-4 py-2 rounded-full text-sm font-semibold hover:border-primary hover:text-primary">GitHub</a></div>
       </article>
-      <article class="reveal reveal-delay-2 card-hover motion-card framer-purple-card bg-white rounded-2xl p-7 border border-border flex flex-col">
+      <article class="reveal reveal-delay-2 card-hover framer-purple-card bg-white rounded-2xl p-7 border border-border flex flex-col">
         <p class="text-xs font-bold uppercase tracking-widest framer-accent mb-3">UI Animée</p>
         <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Framer Motion UI</h3>
         <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
