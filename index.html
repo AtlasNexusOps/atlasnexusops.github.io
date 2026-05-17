@@ -19,20 +19,9 @@
     const saved = localStorage.getItem(KEY);
     if (saved === 'fr') return;
     if (saved === 'en') { window.location.replace('/en/' + window.location.hash); return; }
-
     const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).map(x => String(x).toLowerCase());
-    const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
-
-    // VPN/browser-country proxy: language alone is not enough. A French browser used from
-    // Netherlands/Germany/etc. should see EN by default, while francophone zones stay FR.
-    const francophoneTimeZones = [
-      'europe/paris','europe/brussels','europe/luxembourg','europe/monaco','europe/zurich',
-      'america/montreal','america/toronto','america/guadeloupe','america/martinique',
-      'america/cayenne','indian/reunion','indian/mayotte','pacific/noumea','pacific/tahiti'
-    ];
-    const isFrancophoneLanguage = langs.some(x => x === 'fr' || x.startsWith('fr-'));
-    const isFrancophoneZone = francophoneTimeZones.includes(tz);
-    if (!(isFrancophoneLanguage && isFrancophoneZone)) window.location.replace('/en/' + window.location.hash);
+    const isFrancophone = langs.some(x => x === 'fr' || x.startsWith('fr-'));
+    if (!isFrancophone) window.location.replace('/en/' + window.location.hash);
   } catch(e) {}
 })();
 </script>
