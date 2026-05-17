@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Atlas Nexus — Conseil, Opérations & IA Agentique</title>
-<link rel="canonical" href="https://atlasnexus.tech/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Atlas Nexus — Consulting, Operations & Agentic AI</title>
+<link rel="canonical" href="https://atlasnexus.tech/en/">
 <link rel="alternate" hreflang="fr" href="https://atlasnexus.tech/">
 <link rel="alternate" hreflang="en" href="https://atlasnexus.tech/en/">
 <link rel="alternate" hreflang="x-default" href="https://atlasnexus.tech/en/">
@@ -17,16 +17,16 @@
     const explicit = params.get('lang');
     if (explicit === 'fr' || explicit === 'en') localStorage.setItem(KEY, explicit);
     const saved = localStorage.getItem(KEY);
-    if (saved === 'fr') return;
-    if (saved === 'en') { window.location.replace('/en/' + window.location.hash); return; }
+    if (saved === 'en') return;
+    if (saved === 'fr') { window.location.replace('/' + window.location.hash); return; }
     const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).map(x => String(x).toLowerCase());
     const isFrancophone = langs.some(x => x === 'fr' || x.startsWith('fr-'));
-    if (!isFrancophone) window.location.replace('/en/' + window.location.hash);
+    if (isFrancophone) window.location.replace('/' + window.location.hash);
   } catch(e) {}
 })();
 </script>
 
-<meta name="description" content="Conseil ops, dashboards live, pipelines data, animations web et IA agentique pour indépendants, équipes et PME. Builds rapides, code visible sur GitHub, documentation incluse.">
+<meta name="description" content="Operations consulting, live dashboards, data pipelines, animated web interfaces and agentic AI for freelancers, teams and SMBs. Fast builds, GitHub-visible code when possible, documentation included.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,7 +130,7 @@ tailwind.config = {
 <!-- Nav -->
 <nav class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-lg border-b border-border">
   <div class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-3" aria-label="Atlas Nexus accueil">
+    <a href="#top" class="flex items-center gap-3" aria-label="Atlas Nexus home">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="6" r="2.5" fill="currentColor" stroke="none"/>
@@ -143,15 +143,15 @@ tailwind.config = {
       <span class="font-display font-bold text-xl text-foreground tracking-tight">Atlas Nexus</span>
     </a>
     <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-      <a href="#products" class="hover:text-primary">Produits</a>
-      <a href="#work" class="hover:text-primary">Réalisations</a>
-      <a href="#offers" class="hover:text-primary">Offres</a>
-      <a href="#why" class="hover:text-primary">Pourquoi</a>
+      <a href="#products" class="hover:text-primary">Products</a>
+      <a href="#work" class="hover:text-primary">Work</a>
+      <a href="#offers" class="hover:text-primary">Offers</a>
+      <a href="#why" class="hover:text-primary">Why</a>
       <a href="https://github.com/AtlasNexusOps" class="hover:text-primary">GitHub</a>
     </div>
-    <div class="hidden sm:inline-flex lang-switch" aria-label="Sélecteur de langue">
-      <a class="active" href="/?lang=fr" onclick="localStorage.setItem('atlasnexus.lang','fr')">FR</a>
-      <a href="/en/" onclick="localStorage.setItem('atlasnexus.lang','en')">EN</a>
+    <div class="hidden sm:inline-flex lang-switch" aria-label="Language selector">
+      <a href="/?lang=fr" onclick="localStorage.setItem('atlasnexus.lang','fr')">FR</a>
+      <a class="active" href="/en/" onclick="localStorage.setItem('atlasnexus.lang','en')">EN</a>
     </div>
     <a href="#contact" class="cursor-pointer bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark">
       Contact
@@ -165,24 +165,24 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
     <div class="max-w-4xl hero-stagger">
       <h1 class="hero-title text-foreground mb-8">
-        <span class="glow-word">Conseil,</span><br><span class="glow-word">Opérations,</span><br><span class="glow-word">IA Agentique</span>
+        <span class="glow-word">Consulting,</span><br><span class="glow-word">Operations,</span><br><span class="glow-word">Agentic AI</span>
       </h1>
       <p class="text-2xl sm:text-3xl font-display font-extrabold text-foreground max-w-3xl mb-5 leading-tight">
-        Pour indépendants, équipes et PME.
+        For freelancers, teams and SMBs.
       </p>
       <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-        Je vous aide pour vos opérations, votre automatisation, le déploiement d'IA agentiques et la création d'interfaces web.
+        I help with operations, automation, agentic AI deployments and web interface creation.
       </p>
       <div class="flex gap-3 flex-wrap">
         <a href="#work" class="bg-primary text-white px-7 py-3.5 rounded-full text-base font-semibold hover:bg-primary-dark inline-flex items-center gap-2 font-display">
-          Voir les réalisations
+          See the work
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <a href="https://atlasnexusops.github.io/framer-motion-ui/" class="border-2 border-purple-200 text-purple-700 px-7 py-3.5 rounded-full text-base font-semibold hover:border-purple-500 hover:bg-purple-50 font-display">
           Framer Motion UI
         </a>
       </div>
-      <p class="mt-5 text-sm text-slate-500">Builds courts, livrables vérifiables, code GitHub quand le projet le permet.</p>
+      <p class="mt-5 text-sm text-slate-500">Short builds, verifiable deliverables, GitHub-visible code when the project allows it.</p>
     </div>
   </div>
 </section>
@@ -191,20 +191,20 @@ tailwind.config = {
 <section id="products" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Produits</p>
-      <h2 class="section-title text-foreground mb-12 font-display">Démonstrations utiles, pas seulement décoratives</h2>
+      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Products</p>
+      <h2 class="section-title text-foreground mb-12 font-display">Useful demos, not just decorative pages</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Markets Dashboard -->
       <div class="reveal reveal-delay-1 card-hover market-card bg-surface rounded-2xl p-8 border border-border flex flex-col">
         <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">🔮</span></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Markets Dashboard</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">Radar live multi-actifs : crypto, actions, ETF, indices, forex et commodities.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Live multi-asset radar: crypto, stocks, ETFs, indices, forex and commodities.</p>
         <p class="text-sm font-semibold text-accent mb-4 font-display">GitHub Pages · Yahoo Finance · TradingView</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Dashboard live</span>
           <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">Hawkeye V4</span>
-          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">100+ actifs</span>
+          <span class="px-3 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full">100+ assets</span>
         </div>
         <a href="https://atlasnexusops.github.io/markets-dashboard/" class="mt-auto text-primary text-sm font-semibold hover:text-primary-dark">Live demo →</a>
       </div>
@@ -224,7 +224,7 @@ tailwind.config = {
       <div class="reveal reveal-delay-3 motion-card rounded-2xl p-8 border border-border bg-white flex flex-col">
         <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><span class="text-2xl">✨</span></div>
         <h3 class="text-xl font-bold text-foreground mb-2 font-display">Framer Motion UI</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">Pages React animées : transitions, scroll reveals, parallax, gestures, entrances.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Animated React pages: transitions, scroll reveals, parallax, gestures and entrances.</p>
         <p class="text-sm font-semibold text-purple-600 mb-4 font-display">Skill · Demo · GitHub Pages</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">React</span>
@@ -241,34 +241,34 @@ tailwind.config = {
 <section id="offers" class="py-28 bg-surface">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Offres</p>
-      <h2 class="section-title text-foreground mb-5 font-display">Micro-builds pour débloquer une opération concrète</h2>
-      <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">Chaque offre est pensée pour livrer un outil utilisable rapidement : scope court, sortie vérifiable, documentation minimale incluse.</p>
+      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Offers</p>
+      <h2 class="section-title text-foreground mb-5 font-display">Micro-builds to unblock a concrete operation</h2>
+      <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">Each offer is designed to ship a usable tool quickly: short scope, verifiable output, minimal documentation included.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <article class="reveal reveal-delay-1 card-hover market-card rounded-2xl p-8 border border-border bg-white">
-        <p class="text-sm font-bold text-accent mb-2">A. Développement web</p>
-        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Développement web + données</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> site vitrine, dashboard, app web, données structurées, hébergement.</p>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> indépendants, PME, SaaS, finance, veille, reporting.</p>
-        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 90€ <span class="text-sm font-semibold text-slate-500">ou sur devis léger</span></p>
-        <a href="mailto:alexandre.chahiba@gmail.com?subject=D%C3%A9veloppement%20web%20Atlas%20Nexus" class="inline-flex text-primary font-semibold hover:text-primary-dark">Demander ce build →</a>
+        <p class="text-sm font-bold text-accent mb-2">A. Web development</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Web development + data</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Deliverable:</strong> landing site, dashboard, web app, structured data, hosting.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>For:</strong> freelancers, SMBs, SaaS, finance, monitoring, reporting.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">From €90 <span class="text-sm font-semibold text-slate-500">or lightweight quote</span></p>
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=Web%20development%20Atlas%20Nexus" class="inline-flex text-primary font-semibold hover:text-primary-dark">Request this build →</a>
       </article>
       <article class="reveal reveal-delay-2 motion-card rounded-2xl p-8 border border-border bg-white">
-        <p class="text-sm font-bold text-purple-600 mb-2">B. UI Animée</p>
-        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Pages React · Framer Motion</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> landing page, composants animés, transitions, scroll reveals, gestures.</p>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> SaaS, portfolios, dashboards, pages de vente, onboarding.</p>
-        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 75€</p>
-        <a href="mailto:alexandre.chahiba@gmail.com?subject=UI%20Anim%C3%A9e%20Framer%20Motion%20Atlas%20Nexus" class="inline-flex text-purple-600 font-semibold hover:text-purple-800">Demander ce build →</a>
+        <p class="text-sm font-bold text-purple-600 mb-2">B. Animated UI</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">React pages · Framer Motion</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Deliverable:</strong> landing page, animated components, transitions, scroll reveals, gestures.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>For:</strong> SaaS, portfolios, dashboards, sales pages, onboarding.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">From €75</p>
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=Animated%20UI%20Framer%20Motion%20Atlas%20Nexus" class="inline-flex text-purple-600 font-semibold hover:text-purple-800">Request this build →</a>
       </article>
       <article class="reveal reveal-delay-3 card-hover agentic-card rounded-2xl p-8 border border-border bg-white">
-        <p class="text-sm font-bold text-purple-600 mb-2">C. Agent IA opérationnel</p>
-        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Workflow et reporting</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Livrable :</strong> IA agentique professionnelle, workflow automatisé, reporting, intégration API.</p>
-        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Pour :</strong> Telegram, Discord, monitoring, assistant métier.</p>
-        <p class="text-xl font-extrabold text-foreground mb-6 font-display">À partir de 45€</p>
-        <a href="mailto:alexandre.chahiba@gmail.com?subject=Agent%20IA%20Atlas%20Nexus" class="inline-flex text-purple-600 font-semibold hover:text-purple-800">Demander ce build →</a>
+        <p class="text-sm font-bold text-purple-600 mb-2">C. Operational AI agent</p>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Workflow and reporting</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>Deliverable:</strong> professional agentic AI, automated workflow, reporting, API integration.</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-5"><strong>For:</strong> Telegram, Discord, monitoring, business assistant.</p>
+        <p class="text-xl font-extrabold text-foreground mb-6 font-display">From €45</p>
+        <a href="mailto:alexandre.chahiba@gmail.com?subject=AI%20Agent%20Atlas%20Nexus" class="inline-flex text-purple-600 font-semibold hover:text-purple-800">Request this build →</a>
       </article>
     </div>
   </div>
@@ -279,17 +279,17 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
       <div class="reveal">
-        <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Pourquoi Atlas Nexus</p>
-        <h2 class="section-title text-foreground mb-5 font-display">Crédible parce que livrable.</h2>
-        <p class="text-slate-600 leading-relaxed">L'objectif n'est pas de vendre une promesse magique. C'est de construire un outil fonctionnel, visible, documenté et utilisable par votre activité.</p>
+        <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Why Atlas Nexus</p>
+        <h2 class="section-title text-foreground mb-5 font-display">Credible because it ships.</h2>
+        <p class="text-slate-600 leading-relaxed">The goal is not to sell a magical promise. It is to build a functional, visible, documented tool your business can actually use.</p>
       </div>
       <div class="grid sm:grid-cols-2 gap-4">
-        <div class="reveal reveal-delay-1 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Livraison rapide</p><p class="text-sm text-slate-600">Scope court, priorisation claire, résultat vérifiable.</p></div>
-        <div class="reveal reveal-delay-1 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Code visible sur GitHub</p><p class="text-sm text-slate-600">Quand le projet le permet, le code reste inspectable.</p></div>
-        <div class="reveal reveal-delay-2 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Documentation incluse</p><p class="text-sm text-slate-600">README, commandes utiles, limites connues.</p></div>
-        <div class="reveal reveal-delay-2 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Déploiement simple</p><p class="text-sm text-slate-600">GitHub Pages, scripts Python, exports standards.</p></div>
-        <div class="reveal reveal-delay-3 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Data / IA / UI / automatisation</p><p class="text-sm text-slate-600">Même logique : transformer un flux en outil opérationnel.</p></div>
-        <div class="reveal reveal-delay-3 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Pas de promesse magique</p><p class="text-sm text-slate-600">Un outil fonctionnel livré, pas du storytelling IA.</p></div>
+        <div class="reveal reveal-delay-1 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Fast delivery</p><p class="text-sm text-slate-600">Short scope, clear prioritization, verifiable result.</p></div>
+        <div class="reveal reveal-delay-1 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">GitHub-visible code</p><p class="text-sm text-slate-600">When the project allows it, the code remains inspectable.</p></div>
+        <div class="reveal reveal-delay-2 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Documentation included</p><p class="text-sm text-slate-600">README, useful commands, known limits.</p></div>
+        <div class="reveal reveal-delay-2 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Simple deployment</p><p class="text-sm text-slate-600">GitHub Pages, Python scripts, standard exports.</p></div>
+        <div class="reveal reveal-delay-3 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">Data / IA / UI / automatisation</p><p class="text-sm text-slate-600">Same logic: turn a flow into an operational tool.</p></div>
+        <div class="reveal reveal-delay-3 bg-surface border border-border rounded-2xl p-5"><p class="font-bold mb-1">No magical promise</p><p class="text-sm text-slate-600">A functional tool delivered, not AI storytelling.</p></div>
       </div>
     </div>
   </div>
@@ -299,45 +299,45 @@ tailwind.config = {
 <section id="work" class="py-28 bg-surface">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Réalisations</p>
+      <p class="text-accent font-semibold tracking-widest uppercase text-xs mb-3">Work</p>
       <h2 class="section-title text-foreground mb-5 font-display">Mini case studies</h2>
-      <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">Quelques builds récents montrant le type de sortie livrable : dashboard, pipeline, UI animée, intégration API.</p>
+      <p class="text-slate-600 max-w-2xl mb-12 leading-relaxed">A few recent builds showing the kind of deliverable output: dashboard, pipeline, animated UI, API integration.</p>
     </div>
     <div class="grid lg:grid-cols-3 gap-6">
       <article class="reveal reveal-delay-1 card-hover market-card bg-white rounded-2xl p-7 border border-border flex flex-col">
         <p class="text-xs font-bold uppercase tracking-widest text-accent mb-3">Dashboard live</p>
         <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Markets Dashboard</h3>
         <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
-          <p><strong class="text-foreground">Problème :</strong> surveiller plusieurs classes d'actifs sans ouvrir 6 plateformes.</p>
-          <p><strong class="text-foreground">Build / stack :</strong> Yahoo Finance, TradingView widgets, scanner de pression marché, GitHub Pages.</p>
-          <p><strong class="text-foreground">Output :</strong> dashboard live multi-actifs avec crypto, actions, ETF, indices, forex, commodities.</p>
+          <p><strong class="text-foreground">Problem:</strong> monitor several asset classes without opening 6 platforms.</p>
+          <p><strong class="text-foreground">Build / stack:</strong> Yahoo Finance, TradingView widgets, market-pressure scanner, GitHub Pages.</p>
+          <p><strong class="text-foreground">Output:</strong> live multi-asset dashboard with crypto, stocks, ETFs, indices, forex and commodities.</p>
         </div>
         <div class="flex gap-3 flex-wrap mt-6"><a href="https://atlasnexusops.github.io/markets-dashboard/" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">Live Demo</a><a href="https://github.com/AtlasNexusOps/markets-dashboard" class="border border-border px-4 py-2 rounded-full text-sm font-semibold hover:border-primary hover:text-primary">GitHub</a></div>
       </article>
       <article class="reveal reveal-delay-2 card-hover motion-card bg-white rounded-2xl p-7 border border-border flex flex-col">
-        <p class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-3">UI Animée</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-3">Animated UI</p>
         <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Framer Motion UI</h3>
         <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
-          <p><strong class="text-foreground">Problème :</strong> créer des interfaces React animées sans code spaghetti ni jank.</p>
-          <p><strong class="text-foreground">Build / stack :</strong> React 18, Framer Motion 11, Tailwind — 11 patterns documentés.</p>
-          <p><strong class="text-foreground">Output :</strong> skill documenté + landing page de démo avec entrance, scroll reveal, parallax, counters, gestures.</p>
+          <p><strong class="text-foreground">Problem:</strong> create animated React interfaces without spaghetti code or jank.</p>
+          <p><strong class="text-foreground">Build / stack:</strong> React 18, Framer Motion 11, Tailwind — 11 documented patterns.</p>
+          <p><strong class="text-foreground">Output:</strong> documented skill + demo landing page with entrances, scroll reveal, parallax, counters and gestures.</p>
         </div>
         <div class="flex gap-3 flex-wrap mt-6"><a href="https://atlasnexusops.github.io/framer-motion-ui/" class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-700">Live Demo</a><a href="https://github.com/AtlasNexusOps/framer-motion-ui" class="border border-border px-4 py-2 rounded-full text-sm font-semibold hover:border-purple-500 hover:text-purple-700">GitHub</a></div>
       </article>
       <article class="reveal reveal-delay-3 card-hover bg-white rounded-2xl p-7 border border-border flex flex-col">
         <p class="text-xs font-bold uppercase tracking-widest text-green-600 mb-3">Agentic Verification</p>
-        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">Landing Page On-Chain</h3>
+        <h3 class="text-2xl font-bold text-foreground mb-4 font-display">On-chain Landing Page</h3>
         <div class="space-y-3 text-sm text-slate-600 leading-relaxed flex-1">
-          <p><strong class="text-foreground">Problème :</strong> marketplace de bounties IA sans interface claire pour posters et workers.</p>
-          <p><strong class="text-foreground">Build / stack :</strong> Next.js 15, React 19, Tailwind, viem/wagmi, Celo Mainnet, ERC-8004.</p>
-          <p><strong class="text-foreground">Output :</strong> landing page avec stats on-chain live, scroll bounties, how-it-works, sticky CTA mobile.</p>
+          <p><strong class="text-foreground">Problem:</strong> AI bounty marketplace without a clear interface for posters and workers.</p>
+          <p><strong class="text-foreground">Build / stack:</strong> Next.js 15, React 19, Tailwind, viem/wagmi, Celo Mainnet, ERC-8004.</p>
+          <p><strong class="text-foreground">Output:</strong> landing page with live on-chain stats, bounty scroll, how-it-works and sticky mobile CTA.</p>
         </div>
         <div class="flex gap-3 flex-wrap mt-6"><a href="https://claudelance-demo.onrender.com" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark">Live Demo</a><a href="https://github.com/AtlasNexusOps/agentic-verification" class="border border-border px-4 py-2 rounded-full text-sm font-semibold hover:border-primary hover:text-primary">GitHub</a></div>
       </article>
     </div>
     <div class="mt-8 grid md:grid-cols-3 gap-3">
-      <a href="https://atlasnexusops.github.io/framer-motion-ui/" class="reveal reveal-delay-1 card-hover bg-white rounded-xl p-5 border border-purple-200 hover:border-purple-400 transition-colors"><p class="font-bold text-foreground">Framer Motion UI Skill</p><p class="text-slate-500 text-sm">11 patterns React animés · démo live</p></a>
-      <a href="https://github.com/AtlasNexusOps/birdeye-sprint4" class="reveal reveal-delay-2 card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">Birdeye Sprint 4 + Hawkeye V4</p><p class="text-slate-500 text-sm">Pipeline crypto · pression marché</p></a>
+      <a href="https://atlasnexusops.github.io/framer-motion-ui/" class="reveal reveal-delay-1 card-hover bg-white rounded-xl p-5 border border-purple-200 hover:border-purple-400 transition-colors"><p class="font-bold text-foreground">Framer Motion UI Skill</p><p class="text-slate-500 text-sm">11 animated React patterns · live demo</p></a>
+      <a href="https://github.com/AtlasNexusOps/birdeye-sprint4" class="reveal reveal-delay-2 card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">Birdeye Sprint 4 + Hawkeye V4</p><p class="text-slate-500 text-sm">Crypto pipeline · market pressure</p></a>
       <a href="https://github.com/AtlasNexusOps/proxiesx-services" class="reveal reveal-delay-3 card-hover bg-white rounded-xl p-5 border border-border"><p class="font-bold text-foreground">Proxies.sx Scraping Suite</p><p class="text-slate-500 text-sm">Microservices Python · scraping · x402</p></a>
     </div>
   </div>
@@ -347,13 +347,13 @@ tailwind.config = {
 <section id="process" class="py-28 bg-foreground text-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <p class="text-purple-500 font-semibold tracking-widest uppercase text-xs mb-3">Méthode</p>
-      <h2 class="section-title mb-16 font-display">Comment je travaille</h2>
+      <p class="text-purple-500 font-semibold tracking-widest uppercase text-xs mb-3">Method</p>
+      <h2 class="section-title mb-16 font-display">How I work</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-10">
-      <div class="reveal reveal-delay-1 flex gap-5 items-start"><span class="step-number shrink-0" data-step="01">01</span><div><h3 class="font-bold text-2xl mb-3 font-display">Brief</h3><p class="text-slate-300 text-base leading-relaxed">Vous définissez le besoin, les sources, le format et le délai. Je propose un scope concret.</p></div></div>
-      <div class="reveal reveal-delay-2 flex gap-5 items-start"><span class="step-number shrink-0" data-step="02">02</span><div><h3 class="font-bold text-2xl mb-3 font-display">Build</h3><p class="text-slate-300 text-base leading-relaxed">Je construis, teste, documente. Code propre, livré sur GitHub si possible.</p></div></div>
-      <div class="reveal reveal-delay-3 flex gap-5 items-start"><span class="step-number shrink-0" data-step="03">03</span><div><h3 class="font-bold text-2xl mb-3 font-display">Deliver</h3><p class="text-slate-300 text-base leading-relaxed">Vous recevez le livrable, les commandes utiles, les limites connues et les prochaines options.</p></div></div>
+      <div class="reveal reveal-delay-1 flex gap-5 items-start"><span class="step-number shrink-0" data-step="01">01</span><div><h3 class="font-bold text-2xl mb-3 font-display">Brief</h3><p class="text-slate-300 text-base leading-relaxed">You define the need, sources, format and timeline. I propose a concrete scope.</p></div></div>
+      <div class="reveal reveal-delay-2 flex gap-5 items-start"><span class="step-number shrink-0" data-step="02">02</span><div><h3 class="font-bold text-2xl mb-3 font-display">Build</h3><p class="text-slate-300 text-base leading-relaxed">I build, test and document. Clean code, delivered on GitHub when possible.</p></div></div>
+      <div class="reveal reveal-delay-3 flex gap-5 items-start"><span class="step-number shrink-0" data-step="03">03</span><div><h3 class="font-bold text-2xl mb-3 font-display">Deliver</h3><p class="text-slate-300 text-base leading-relaxed">You receive the deliverable, useful commands, known limits and next options.</p></div></div>
     </div>
   </div>
 </section>
@@ -362,13 +362,13 @@ tailwind.config = {
 <section id="contact" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <div class="reveal">
-      <h2 class="section-title text-foreground mb-5 font-display">Parlons de votre projet</h2>
+      <h2 class="section-title text-foreground mb-5 font-display">Let’s discuss your project</h2>
       <div class="flex gap-6 text-sm flex-wrap justify-center mt-2">
         <a href="mailto:alexandre.chahiba@gmail.com" class="text-primary font-semibold hover:text-primary-dark">alexandre.chahiba@gmail.com</a>
         <a href="mailto:atlasnexus.ops@proton.me" class="text-primary font-semibold hover:text-primary-dark">atlasnexus.ops@proton.me</a>
         <a href="tel:+33750455095" class="text-primary font-semibold hover:text-primary-dark">+33 7 50 50 45 95</a>
       </div>
-      <p class="text-purple-500 font-semibold tracking-widest uppercase text-xs mt-4">Votre mission, notre priorité</p>
+      <p class="text-purple-500 font-semibold tracking-widest uppercase text-xs mt-4">Your mission, our priority</p>
     </div>
   </div>
 </section>
