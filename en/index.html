@@ -19,9 +19,17 @@
     const saved = localStorage.getItem(KEY);
     if (saved === 'en') return;
     if (saved === 'fr') { window.location.replace('/' + window.location.hash); return; }
+
     const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).map(x => String(x).toLowerCase());
-    const isFrancophone = langs.some(x => x === 'fr' || x.startsWith('fr-'));
-    if (isFrancophone) window.location.replace('/' + window.location.hash);
+    const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+    const francophoneTimeZones = [
+      'europe/paris','europe/brussels','europe/luxembourg','europe/monaco','europe/zurich',
+      'america/montreal','america/toronto','america/guadeloupe','america/martinique',
+      'america/cayenne','indian/reunion','indian/mayotte','pacific/noumea','pacific/tahiti'
+    ];
+    const isFrancophoneLanguage = langs.some(x => x === 'fr' || x.startsWith('fr-'));
+    const isFrancophoneZone = francophoneTimeZones.includes(tz);
+    if (isFrancophoneLanguage && isFrancophoneZone) window.location.replace('/' + window.location.hash);
   } catch(e) {}
 })();
 </script>
