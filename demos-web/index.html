@@ -9,18 +9,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f8fafc;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--blue2:#06b6d4;--green:#16a34a;--amber:#d97706;--violet:#7c3aed;--card:#fff;--shadow:0 24px 70px rgba(15,23,42,.10)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(37,99,235,.13),transparent 32%),radial-gradient(circle at 85% 10%,rgba(6,182,212,.12),transparent 28%),var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:-.04em}.brand span{color:var(--blue)}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.76);padding:10px 14px;color:var(--muted);font-weight:800;font-size:13px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;border:1px solid var(--line);background:#fff;box-shadow:0 10px 26px rgba(15,23,42,.08)}.btn.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border:0}.hero{padding:70px 0 42px}.hero h1{font-family:'Space Grotesk',Inter,sans-serif;font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-.065em;margin:18px 0}.lead{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:42px 0 70px}.card{position:relative;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.82);border-radius:28px;padding:26px;box-shadow:var(--shadow);min-height:330px;display:flex;flex-direction:column}.card:before{content:"";position:absolute;inset:auto -40px -80px auto;width:220px;height:220px;border-radius:50%;background:var(--accent);opacity:.13}.tag{width:max-content;border-radius:999px;padding:8px 11px;background:rgba(15,23,42,.06);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.card h2{font-family:'Space Grotesk',Inter,sans-serif;font-size:32px;line-height:1;margin:18px 0 12px;letter-spacing:-.05em}.card p{color:var(--muted);margin:0 0 16px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px}.meta span{font-size:12px;font-weight:800;color:#334155;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:7px 10px}.card-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.live{background:var(--accent);color:#fff;border:0}.soon{background:rgba(255,255,255,.72)}.soon .live{background:#0f172a}.price{font-weight:900;color:var(--ink);margin-top:2px}.note{border:1px solid var(--line);border-radius:24px;background:#fff;padding:24px;margin-bottom:80px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}@media(max-width:820px){.grid{grid-template-columns:1fr}.hero{padding-top:40px}.nav{gap:14px}.nav .btn{display:none}}
+    :root{--bg:#f8fafc;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--blue2:#06b6d4;--card:#fff;--shadow:0 24px 70px rgba(15,23,42,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(37,99,235,.13),transparent 32%),radial-gradient(circle at 85% 10%,rgba(6,182,212,.12),transparent 28%),var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}.sitebar{position:sticky;top:0;z-index:30;background:rgba(248,250,252,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(226,232,240,.9)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.04em}.moon{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0f172a,#2563eb);position:relative;box-shadow:0 12px 26px rgba(37,99,235,.24)}.moon:after{content:"";position:absolute;inset:7px 5px 7px 11px;border-radius:50%;background:#f8fafc}.brand small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}.links{display:flex;gap:20px;color:#475569;font-weight:800;font-size:14px}.links a:hover{color:var(--blue)}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;border:1px solid var(--line);background:#fff;box-shadow:0 10px 26px rgba(15,23,42,.08)}.btn.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border:0}.btn.dark{background:#0f172a;color:#fff;border:0}.hero{padding:66px 0 42px}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:#64748b;font-size:13px;font-weight:800;margin-bottom:18px}.breadcrumb a{color:#2563eb}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.76);padding:10px 14px;color:var(--muted);font-weight:800;font-size:13px}.hero h1{font-family:'Space Grotesk',Inter,sans-serif;font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.065em;margin:18px 0}.lead{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:800px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.trust{margin-top:20px;color:#475569;font-weight:800;font-size:14px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:42px 0 46px}.card{position:relative;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.86);border-radius:28px;padding:26px;box-shadow:var(--shadow);min-height:330px;display:flex;flex-direction:column}.card:before{content:"";position:absolute;inset:auto -40px -80px auto;width:220px;height:220px;border-radius:50%;background:var(--accent);opacity:.13}.tag{width:max-content;border-radius:999px;padding:8px 11px;background:rgba(15,23,42,.06);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.card h2{font-family:'Space Grotesk',Inter,sans-serif;font-size:32px;line-height:1;margin:18px 0 12px;letter-spacing:-.05em}.card p{color:var(--muted);margin:0 0 16px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px}.meta span{font-size:12px;font-weight:800;color:#334155;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:7px 10px}.card-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.live{background:#0f172a;color:#fff;border:0}.price{font-weight:900;color:var(--ink);margin-top:2px}.note{border:1px solid var(--line);border-radius:24px;background:#fff;padding:24px;margin:0 0 80px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px;background:rgba(255,255,255,.62)}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot a{color:#2563eb;font-weight:800}@media(max-width:860px){.grid{grid-template-columns:1fr}.links{display:none}.hero{padding-top:40px}.nav{height:68px}.brand small{display:none}}
   </style>
 </head>
 <body>
-  <header><div class="wrap nav"><a class="brand" href="/">Atlas<span>Nexus</span></a><a class="btn" href="/#offers">Retour aux offres</a></div></header>
+  <header class="sitebar">
+    <div class="wrap nav">
+      <a class="brand" href="/"><span class="moon"></span><span>Atlas Nexus<small>Développement web</small></span></a>
+      <nav class="links" aria-label="Navigation AtlasNexus">
+        <a href="/">Accueil</a>
+        <a href="/#offers">Offres</a>
+        <a href="/#work">Réalisations</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn" href="/#offers">Retour aux offres</a>
+    </div>
+  </header>
+
   <main>
     <section class="hero"><div class="wrap">
-      <span class="pill">Démos web · refonte express · pages orientées contact</span>
-      <h1>Choisissez une démo adaptée à votre activité.</h1>
-      <p class="lead">Ces exemples montrent comment transformer une page datée en vitrine plus crédible : message clair, design moderne, preuves visibles, CTA contact/devis.</p>
-      <div class="actions"><a class="btn primary" href="/demo-refonte-artisan/">Voir la démo artisan</a><a class="btn" href="/#contact">Demander une version pour mon activité</a></div>
+      <div class="breadcrumb"><a href="/">AtlasNexus</a><span>›</span><a href="/#offers">Développement web</a><span>›</span><span>Démos sectorielles</span></div>
+      <span class="pill">Vous êtes sur atlasnexus.tech · offre développement web · démos intégrées</span>
+      <h1>Démos web intégrées à l’offre AtlasNexus.</h1>
+      <p class="lead">Choisissez une catégorie pour visualiser le type de page que je peux livrer rapidement : message clair, design moderne, preuves visibles, CTA contact/devis, sans quitter l’écosystème AtlasNexus.</p>
+      <div class="actions"><a class="btn primary" href="/demo-refonte-artisan/">Voir l’exemple artisan intégré</a><a class="btn" href="/#contact">Demander une version pour mon activité</a></div>
+      <p class="trust">Même domaine, même offre, même parcours commercial : la démo sert de preuve avant devis.</p>
     </div></section>
 
     <section class="wrap grid" aria-label="Catégories de démos web">
@@ -29,42 +43,42 @@
         <h2>Refonte artisan premium</h2>
         <p>Pour menuisiers, plombiers, électriciens, paysagistes, ateliers et métiers de confiance. Objectif : rendre le savoir-faire plus visible et le devis plus facile.</p>
         <div class="meta"><span>Hero premium</span><span>Preuves métier</span><span>Formulaire devis</span></div>
-        <p class="price">À partir de 75€ / 150€ page complète</p>
-        <div class="card-actions"><a class="btn live" href="/demo-refonte-artisan/">Démo générique →</a><a class="btn" href="/demo-menuiserie.fr/">Variante menuiserie →</a></div>
+        <p class="price">Démarrage à 75€ · page complète généralement autour de 150€</p>
+        <div class="card-actions"><a class="btn live" href="/demo-refonte-artisan/">Voir cette démo intégrée à l’offre →</a></div>
       </article>
 
-      <article class="card soon" style="--accent:#dc2626">
+      <article class="card" style="--accent:#dc2626">
         <span class="tag">Restaurant / commerce</span>
         <h2>Menu + réservation claire</h2>
         <p>Pour restaurants, snacks, bars, traiteurs et commerces locaux. Objectif : horaires, menu, photos, réservation/appel visibles immédiatement.</p>
         <div class="meta"><span>Menu lisible</span><span>Google Maps</span><span>CTA réservation</span></div>
-        <p class="price">Démo prête sur demande</p>
+        <p class="price">Version sectorielle prête sur demande</p>
         <div class="card-actions"><a class="btn live" href="/#contact">Demander cette catégorie →</a></div>
       </article>
 
-      <article class="card soon" style="--accent:#16a34a">
+      <article class="card" style="--accent:#16a34a">
         <span class="tag">Santé / bien-être</span>
         <h2>Page rassurante et humaine</h2>
         <p>Pour thérapeutes, praticiens, coachs santé, instituts et bien-être. Objectif : rassurer, expliquer la méthode, simplifier la prise de contact.</p>
         <div class="meta"><span>Réassurance</span><span>Méthode</span><span>Contact doux</span></div>
-        <p class="price">Démo prête sur demande</p>
+        <p class="price">Version sectorielle prête sur demande</p>
         <div class="card-actions"><a class="btn live" href="/#contact">Demander cette catégorie →</a></div>
       </article>
 
-      <article class="card soon" style="--accent:#7c3aed">
+      <article class="card" style="--accent:#7c3aed">
         <span class="tag">Consultant / indépendant</span>
         <h2>Landing d’expertise</h2>
         <p>Pour consultants, freelances, coachs, formateurs et indépendants. Objectif : positionnement clair, offre lisible, preuve, appel découverte.</p>
         <div class="meta"><span>Offre claire</span><span>Preuves</span><span>Call booking</span></div>
-        <p class="price">Démo prête sur demande</p>
+        <p class="price">Version sectorielle prête sur demande</p>
         <div class="card-actions"><a class="btn live" href="/#contact">Demander cette catégorie →</a></div>
       </article>
     </section>
 
     <section class="wrap note">
-      <strong>Approche commerciale :</strong> pas besoin de refaire tout un site. Une seule page ou section bien conçue peut déjà améliorer la première impression, la confiance et le passage au contact. Les catégories sur demande suivent la même logique tarifaire : démarrage léger à 75€, page complète typiquement autour de 150€ selon contenu. Livraison typique : maquette HTML/CSS statique ou base intégrable.
+      <strong>Approche commerciale :</strong> cette page n’est pas une ancienne version ni un site séparé : c’est le catalogue de preuves de l’offre développement web AtlasNexus. Une seule page ou section bien conçue peut déjà améliorer la première impression, la confiance et le passage au contact. Démarrage léger à 75€, page complète typiquement autour de 150€ selon contenu.
     </section>
   </main>
-  <footer><div class="wrap">AtlasNexus · Démos web pour micro-builds rapides</div></footer>
+  <footer><div class="wrap foot"><span>AtlasNexus · Démos web pour micro-builds rapides</span><span><a href="/">Accueil</a> · <a href="/#offers">Offres</a> · <a href="/#contact">Contact</a></span></div></footer>
 </body>
 </html>
